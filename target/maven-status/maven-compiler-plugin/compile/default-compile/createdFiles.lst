@@ -1,0 +1,14 @@
+web/controller/MainPageController.class
+web/config/WebConfig.class
+web/controller/LoginPageController.class
+web/model/User.class
+web/dao/UserHibernateDAO.class
+web/controller/DeletePageController.class
+web/service/UserServiceImpl.class
+web/controller/LogoutPageController.class
+web/utils/DBHelper.class
+web/controller/EditPageController.class
+web/config/AppInit.class
+web/dao/UserDao.class
+web/controller/AddPageController.class
+web/utils/PropertyReader.class
