@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>All Users</title>
+    <link href="/resources/css/buttonstyle.css" rel="stylesheet" type="text/css">
+    <link href="/resources/css/main.css" rel="stylesheet" type="text/css">
+
+
+</head>
+<body class="container-table100">
+<table class="wrap-table100">
+    <tr>
+<!--        <th class="column1">ID</th>-->
+        <th class="column1">Name</th>
+        <th class="column2">Username</th>
+        <th class="column3">Password</th>
+        <th class="column4>">Roles</th>
+    </tr>
+    <th:block th:each="users : ${users}">
+        <tr>
+<!--            <td class="column1" th:text="${users.id}">ID</td>-->
+            <td class="column1" th:text="${users.name}">Name</td>
+            <td class="column2" th:text="${users.username}">Username</td>
+            <td class="column3" th:text="${users.password}">Password</td>
+            <td class="column4"
+                       th:each="role : ${users.roles}"
+                       th:text="${role.roleName}">Roles</td>
+            <td class="column5"></td>
+
+            <td class="column5">
+                <a th:href="@{'/admin/edit?id=' + ${users.id}}"   methods="get" class="button">Edit</a>
+            </td>
+            <td class="column6">
+                <a th:href="@{'/admin/delete?id=' + ${users.id}}"  class="buttonRed">Delete</a>
+            </td>
+        </tr>
+    </th:block>
+</table>
+
+<a href="/admin/addUser" class="button">Add</a>
+<a href="/logout" methods="get" class="buttonRed">Exit</a>
+
+</body>
+</html>

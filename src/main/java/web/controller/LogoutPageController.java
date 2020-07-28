@@ -2,8 +2,8 @@ package web.controller;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpSession;
 
@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/logout")
 public class LogoutPageController {
 
-    @RequestMapping(method = RequestMethod.GET)
+    @GetMapping
     public String LogOut(HttpSession session) {
         session.invalidate();
         return "redirect:/login";
