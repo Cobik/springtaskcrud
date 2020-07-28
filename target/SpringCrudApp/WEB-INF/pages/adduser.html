@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add User</title>
+    <link href="/resources/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/resources/css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="form-style-8">
+
+    <div class="form-style-8 header">Add User Form</div>
+    <form name="userForm" th:userDto="${user}" action="/admin/addUser" enctype="utf8" method="post">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" th:field="*{user.name}"/></td>
+            </tr>
+            <tr>
+                <td>UserName:</td>
+                <td><input type="text" th:field="*{user.username}"/></td>
+            </tr>
+
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" th:field="*{user.password}"/></td>
+            </tr>
+
+            <tr>
+                <td>Roles:</td>
+                <td><input type="checkbox" name="roles"
+                           th:each="role : ${allRoles}"
+                           th:text="${role.roleName}"
+                           th:value="${role.id}"
+                          />
+                </td>
+            </tr>
+
+
+            <tr>
+                <td><input name="submit" type="submit" value="Sign Up"/></td>
+            </tr>
+
+        </table>
+    </form>
+</div>
+
+</body>
+</html>
+
+<!--th:value="${role.id}"-->

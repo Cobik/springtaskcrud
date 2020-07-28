@@ -10,11 +10,13 @@ public interface UserDao {
 
     User getUserById(Long id) throws SQLException;
 
+    User findByUsername(String userName) throws SQLException;
+
     boolean validateUser(User user) throws SQLException;
 
     boolean deleteUser(Long id) throws SQLException;
 
-    boolean updateUser(User user, Long id) throws SQLException;
+    boolean updateUser(User user) throws SQLException;
 
     List<User> getAllUsers() throws SQLException;
 
