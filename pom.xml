@@ -11,7 +11,7 @@
     <packaging>war</packaging>
 
     <properties>
-        <spring.version>5.2.0.RELEASE</spring.version>
+        <spring.version>5.3.18</spring.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <mysql.mysql-connector-java.version>8.0.15</mysql.mysql-connector-java.version>
